@@ -11,7 +11,4 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    build: {
-        outDir: 'public/build', // Ensure the build is outputted here
-    },
 });
