@@ -15,7 +15,7 @@
         }
     ],
     "public": true,
-    "buildCommand": "vite build",
+    "buildCommand": "npm run build && composer install --no-dev --optimize-autoloader",
     "outputDirectory": "public",
     "env": {
         "APP_CONFIG_CACHE": "/tmp/config.php",
