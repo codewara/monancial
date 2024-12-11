@@ -15,7 +15,7 @@
         }
     ],
     "public": true,
-    "buildCommand": "npm run build && composer install --no-dev --optimize-autoloader",
+    "buildCommand": "npm run build && curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --optimize-autoloader",
     "outputDirectory": "public",
     "env": {
         "APP_CONFIG_CACHE": "/tmp/config.php",
