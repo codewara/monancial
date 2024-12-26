@@ -58,11 +58,11 @@ const Carousel = ({ slides } : CarouselProps) => {
 
             {/* Buttons */}
             <button
-                className={`top-0 left-0 w-[15%] h-full bg-black ${screenMD ? `absolute` : `hidden`}`}
+                className={`top-0 left-0 w-[15%] h-full ${screenMD ? `absolute` : `hidden`}`}
                 onClick={prevSlide}
             ></button>
             <button
-                className={`top-0 right-0 w-[15%] h-full bg-black ${screenMD ? `absolute` : `hidden`}`}
+                className={`top-0 right-0 w-[15%] h-full ${screenMD ? `absolute` : `hidden`}`}
                 onClick={nextSlide}
             ></button>
 
