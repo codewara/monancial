@@ -31,6 +31,12 @@ export default function Home() {
           <p className="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec neque in nisi laoreet vehicula. Donec nec felis sit amet
             libero fermentum aliquet. Nullam nec neque in nisi laoreet vehicula. Donec nec felis sit amet libero fermentum aliquet.</p>
         </section>
+
+        <section id="contact" className="h-screen w-full px-8">
+          <h2 className="text-4xl font-bold">Contact</h2>
+          <p className="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec neque in nisi laoreet vehicula. Donec nec felis sit amet
+            libero fermentum aliquet. Nullam nec neque in nisi laoreet vehicula. Donec nec felis sit amet libero fermentum aliquet.</p>
+        </section>
       </main>
     </div>
   );
