@@ -40,22 +40,19 @@ nav.scrolled {
   box-shadow: 0 0 10px var(--shadow);
 }
 
-body.scrolled nav {
-  box-shadow: 0 0 10px var(--shadow);
-}
-
 nav .title {
   color: var(--prime);
   font-size: xx-large;
-  background-image: linear-gradient(to right, var(--primary) 30%, var(--secondary) 100%);
+  background-image: linear-gradient(to right, var(--primary) 32%, var(--secondary) 63%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .btn {
-  background: var(--primary);
   color: var(--background);
+  background: var(--primary);
+  text-align: center;
   padding: 0.5rem 1.5rem;
   border: 2px solid var(--primary);
   border-radius: 1.5rem;
@@ -69,10 +66,37 @@ nav .title {
   border: 2px solid var(--primary);
 }
 
-a {
+li > a {
+  position: relative;
   transition: all 0.3s;
 }
 
-a:hover {
-  color: var(--primary);
+li > a::before {
+  position: absolute;
+  display: block;
+  bottom: -5px;
+  content: "";
+  height: 2px;
+  width: 0;
+  background: var(--primary);
+  transition: all 0.3s;
+}
+
+li > a:hover::before,
+li > a.active::before {
+  width: 80%;
+}
+
+.mobilenav {
+  display: flex;
+  flex-direction: column;
+  background: #00000000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10 10px #0000001a;
+  transition: all 0.3s;
+  z-index: 999;
+}
+
+nav.scrolled + .mobilenav {
+  background: var(--background);
 }
