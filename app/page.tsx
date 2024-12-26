@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="flex justify-center min-h-screen font-[family-name:var(--geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full">
-        <div className={`carousel w-full h-full bg-black bg-opacity-50`}>
+        <div className={`w-full h-screen bg-black bg-opacity-50`}>
           <Carousel slides={mainSlide}/>
         </div>
         <section id="home" className="h-screen w-full px-8">
