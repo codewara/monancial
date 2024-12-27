@@ -15,7 +15,7 @@ interface CarouselProps {
 
 const Carousel = ({ slides } : CarouselProps) => {
     const [current, setCurrent] = useState(0);
-    const screenMD = typeof window !== 'undefined' && window.innerWidth >= 768;
+    const screenMD = window.innerWidth >= 768;
 
     const nextSlide = useCallback(() => {
         setCurrent((current) => (current === slides.length - 1 ? 0 : current + 1));
