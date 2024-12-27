@@ -1,14 +1,11 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-// import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-// import clsx from 'clsx';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState<string | null>(null);
-    // const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {

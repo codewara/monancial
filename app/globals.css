@@ -92,7 +92,7 @@ li > a.active::before {
   flex-direction: column;
   background: #00000000;
   backdrop-filter: blur(10px);
-  box-shadow: 0 10 10px #0000001a;
+  box-shadow: 0 10px 10px #0000001a;
   transition: all 0.3s;
   z-index: 999;
 }
