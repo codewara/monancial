@@ -15,7 +15,8 @@ interface CarouselProps {
 
 const Carousel = ({ slides } : CarouselProps) => {
     const [current, setCurrent] = useState(0);
-
+    const [screenMD, setScreenMD] = useState(false);
+    
     const nextSlide = useCallback(() => {
         setCurrent((current) => (current === slides.length - 1 ? 0 : current + 1));
     }, [slides.length]);
@@ -30,6 +31,14 @@ const Carousel = ({ slides } : CarouselProps) => {
         preventScrollOnSwipe: true,
         trackMouse: true,
     });
+
+    useEffect(() => {
+        const handleResize = () => setScreenMD(window.innerWidth >= 768);
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     
     useEffect(() => {
         const interval = setInterval(nextSlide, 5000);
@@ -57,15 +66,11 @@ const Carousel = ({ slides } : CarouselProps) => {
 
             {/* Buttons */}
             <button
-                className={`top-0 left-0 w-[15%] h-full ${
-                    window.innerWidth >= 768 ? `absolute` : `hidden`
-                }`}
+                className={`top-0 left-0 w-[15%] h-full ${screenMD ? `absolute` : `hidden`}`}
                 onClick={prevSlide}
             ></button>
             <button
-                className={`top-0 right-0 w-[15%] h-full ${
-                    window.innerWidth >= 768 ? `absolute` : `hidden`
-                }`}
+                className={`top-0 right-0 w-[15%] h-full ${screenMD ? `absolute` : `hidden`}`}
                 onClick={nextSlide}
             ></button>
 
