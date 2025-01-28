@@ -22,69 +22,26 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-}
-
 nav {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   transition: all 0.3s;
-}
 
-nav.scrolled {
-  background: var(--background);
-  box-shadow: 0 0 10px var(--shadow);
-}
-
-nav .title {
-  color: var(--prime);
-  font-size: xx-large;
-  background-image: linear-gradient(to right, var(--primary) 32%, var(--secondary) 63%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.btn {
-  color: var(--background);
-  background: var(--primary);
-  text-align: center;
-  padding: 0.5rem 1.5rem;
-  border: 2px solid var(--primary);
-  border-radius: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btn:hover {
-  color: var(--primary);
-  background: rgba(0, 0, 0, 0);
-  border: 2px solid var(--primary);
-}
-
-li > a {
-  position: relative;
-  transition: all 0.3s;
-}
-
-li > a::before {
-  position: absolute;
-  display: block;
-  bottom: -5px;
-  content: "";
-  height: 2px;
-  width: 0;
-  background: var(--primary);
-  transition: all 0.3s;
-}
-
-li > a:hover::before,
-li > a.active::before {
-  width: 80%;
+  &.scrolled {
+    background: var(--background);
+    box-shadow: 0 0 10px var(--shadow);
+  }
+  
+  .title {
+    color: var(--prime);
+    font-size: xx-large;
+    background-image: linear-gradient(to right, var(--primary) 32%, var(--secondary) 63%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .mobilenav {
@@ -99,4 +56,42 @@ li > a.active::before {
 
 nav.scrolled + .mobilenav {
   background: var(--background);
+}
+
+.btn {
+  color: var(--background);
+  background: var(--primary);
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--primary);
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  
+  &:hover {
+    color: var(--primary);
+    background: rgba(0, 0, 0, 0);
+    border: 2px solid var(--primary);
+  }
+}
+
+li > a {
+  position: relative;
+  transition: all 0.3s;
+  
+  &::before {
+    position: absolute;
+    display: block;
+    bottom: -5px;
+    content: "";
+    height: 2px;
+    width: 0;
+    background: var(--primary);
+    transition: all 0.3s;
+  }
+  
+  &:hover::before,
+  &.active::before {
+    width: 80%;
+  }
 }

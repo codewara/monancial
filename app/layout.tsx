@@ -1,19 +1,9 @@
-import { Geist, Geist_Mono, Mona_Sans } from "next/font/google";
+import { Mona_Sans } from "next/font/google";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from "next";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--geist-mono",
-  subsets: ["latin"],
-});
 
 const monaSans = Mona_Sans({
   variable: "--mona-sans",
@@ -34,9 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`
-          ${geistSans.variable} ${geistMono.variable} ${monaSans.variable} antialiased
-          font-[family-name:var(--mono-sans)] font-semibold
-          text-[var(--foreground)] bg-[var(--background)]
+          ${monaSans.variable} antialiased
+          font-[family-name:var(--mono-sans)] font-semibold text-[var(--foreground)] bg-[var(--background)]
         `}
       >
         <Navbar />
